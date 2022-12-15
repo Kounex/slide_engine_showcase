@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:slide_engine_showcase/widgets/base/web_scaffold.dart';
 
 class SlideDetailsView extends StatelessWidget {
@@ -13,7 +14,17 @@ class SlideDetailsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return WebScaffold(
       body: Center(
-        child: Text(id.toString()),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(id.toString()),
+            const SizedBox(height: 12.0),
+            ElevatedButton(
+              onPressed: () => context.pop(),
+              child: const Text('Go back'),
+            ),
+          ],
+        ),
       ),
     );
   }

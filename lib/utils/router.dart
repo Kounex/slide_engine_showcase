@@ -54,7 +54,7 @@ class RouterUtils {
                 color: Colors.black,
                 title: 'Slides',
                 child: SlidesView(
-                  id: int.tryParse(state.queryParams['id'] ?? '') ?? 1,
+                  id: int.tryParse(state.params['id'] ?? '') ?? 1,
                 ),
               ),
             ),
@@ -68,7 +68,7 @@ class RouterUtils {
                     color: Colors.black,
                     title: 'Details',
                     child: SlideDetailsView(
-                      id: int.tryParse(state.queryParams['id'] ?? '') ?? 1,
+                      id: int.tryParse(state.params['id'] ?? '') ?? 1,
                     ),
                   ),
                 ),
@@ -100,7 +100,10 @@ class SlidesRoute extends BaseRoute {
 }
 
 class SlidesDetailsRoute extends SlidesRoute {
-  SlidesDetailsRoute() : super() {
+  SlidesDetailsRoute(BuildContext context)
+      : super(
+          id: int.tryParse(GoRouterState.of(context).params['id'] ?? '') ?? 1,
+        ) {
     path += '/details';
   }
 }

@@ -17,7 +17,7 @@ class ShareWebsiteButton extends StatelessWidget {
             topPadding: 0,
             socialInfos: [
               SocialEntry(
-                link: 'https://github.com/Kounex/go_go_router',
+                link: 'https://github.com/Kounex/slide_engine_showcase',
                 linkText: 'Repository',
                 icon: Ionicons.logo_github,
               ),

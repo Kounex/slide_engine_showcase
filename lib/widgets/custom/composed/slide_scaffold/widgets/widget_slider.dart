@@ -60,7 +60,9 @@ class _WidgetSliderState extends State<WidgetSlider>
                   widget.direction == ArrowDirection.up
               ? Axis.vertical
               : Axis.horizontal,
-          child: widget.child,
+          child: Center(
+            child: widget.child,
+          ),
         ),
       ),
       Card(
@@ -119,6 +121,8 @@ class _WidgetSliderState extends State<WidgetSlider>
     }
 
     return Flex(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
       direction: widget.direction == ArrowDirection.up ||
               widget.direction == ArrowDirection.down
           ? Axis.vertical

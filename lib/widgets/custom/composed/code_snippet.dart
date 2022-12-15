@@ -5,6 +5,7 @@ import 'package:flutter_syntax_view/flutter_syntax_view.dart';
 import '../../base/card.dart';
 
 class CodeSnippet extends StatelessWidget {
+  final String? title;
   final String code;
 
   static const double kBarBubbleSize = 10.0;
@@ -12,6 +13,7 @@ class CodeSnippet extends StatelessWidget {
 
   const CodeSnippet({
     super.key,
+    this.title,
     required this.code,
   });
 
@@ -50,6 +52,12 @@ class CodeSnippet extends StatelessWidget {
                       ),
                     )
                     .toList(),
+                const SizedBox(width: 12.0),
+                if (title != null)
+                  Text(
+                    title!,
+                    style: Theme.of(context).textTheme.caption,
+                  ),
               ],
             ),
           ),
